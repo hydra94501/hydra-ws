@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: @profile.active@
+
+
+management:
+  #  endpoints:
+  #    web:
+  #      exposure:
+  #        include: "*"
+  endpoint:
+    health:
+      show-details: always

@@ -1,0 +1,39 @@
+server:
+  port: 9200
+  tomcat:
+    max-connections: 100000           # 设置最大连接数
+    max-threads: 5000                # 设置最大线程数
+    connection-timeout: 20000        # 设置连接超时时间（单位：毫秒）
+    keep-alive-timeout: 60000        # 设置保持连接的最大时间（单位：毫秒）
+spring:
+  task:
+    execution:
+      pool:
+        core-size: 5000
+        max-size: 100000
+        queue-capacity: 1000
+        keep-alive: 60s
+    scheduler:
+      pool:
+        size: 10
+  redis:
+    database: 0
+    host: 34.150.92.75
+    lettuce:
+      pool:
+        max-active: -1
+        max-idle: 64
+        max-wait: -1
+        min-idle: 0
+        time-between-eviction-runs: 300000
+    password: 3*PQpVSG9IBKipO^
+    port: 6379
+    timeout: 50000
+management:
+  #  endpoints:
+  #    web:
+  #      exposure:
+  #        include: "*"
+  endpoint:
+    health:
+      show-details: always
